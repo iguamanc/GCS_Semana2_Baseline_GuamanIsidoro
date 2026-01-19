@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Agua Potable</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="center">
+
+<div class="card">
+    <h1 class="titulo" align="center">Gestión Agua Potable</h1>
+	<small align="center">Caguanapamba</small>
+	
+	<form id="loginForm" class="card">
+		<input type="hidden" id="id_editar">
+
+		<div class="form-group">
+			<label>USUARIO</label>
+			<input type="text" id="usuario" placeholder="Usuario" required>
+		</div>
+		<div class="form-group">
+			<label>CONTRASENA</label>
+			 <input type="password" id="contrasena" placeholder="Contraseña" required>
+		</div>
+		
+        <button type="submit" class="btn btn-primary" >Ingresar</button>
+		
+    </form>
+
+    <p class="info">Usuario demo: admin | Clave: 1234</p>
+</div>
+
+<script src="js/db.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

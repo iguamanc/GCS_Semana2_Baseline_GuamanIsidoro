@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel - GAP Caguanapamba</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+	<div class="navbar flex-1">
+		<div class="nav-titulo">
+			<h1 class="titulo">Gestión de Lectura de Agua Potable</h1>
+			<small>Caguanapamba</small>
+		</div>
+		<nav class="nav-botones">
+			<button class="nav-btn" onclick="mostrarVista('lista')">
+				Lista Lectura (Offline)
+			</button>
+			<button class="nav-btn" onclick="mostrarVista('historial')">
+				Historial (Online)
+			</button>
+			<button class="nav-btn salir" onclick="logout()">Salir</button>
+		</nav>	
+    </div>	
+</header>
+<main class="container">
+	
+	<!-- VISTA LISTA LECTURA (OFFLINE) -->
+    <section id="vista-lista" class="nav-section hidden">
+        <!-- FORMULARIO -->
+		<form id="lecturaForm" class="form-grid">
+			<input type="hidden" id="id_editar">
+
+			<div class="form-group">
+				<label>COD_CAP</label>
+				<input type="text" id="cod_cliente_ap" required>
+			</div>
+
+			<div class="form-group">
+				<label>NOMBRES</label>
+				<input type="text" id="nombres" required>
+			</div>
+
+			<div class="form-group">
+				<label>NRO MEDIDOR</label>
+				<input type="text" id="nro_medidor">
+			</div>
+
+			<div class="form-group">
+				<label>DIRECCIÓN</label>
+				<input type="text" id="direccion">
+			</div>
+
+			<div class="form-group">
+				<label>MES</label>
+				<input type="text" id="mes">
+			</div>
+
+			<div class="form-group">
+				<label>AÑO</label>
+				<input type="number" id="ano">
+			</div>
+
+			<div class="form-group">
+				<label>LECTURA ANTERIOR</label>
+				<input type="number" id="lectura_ant">
+			</div>
+
+			<div class="form-group">
+				<label>LECTURA ACTUAL</label>
+				<input type="number" id="lectura_act">
+			</div>
+
+			<div class="form-group">
+				<label>FECHA LECTURA</label>
+				<input type="text" id="fecha_lectura">
+			</div>
+
+			<div class="form-group">
+				<label>COD ESTADO</label>
+				<input type="text" id="cod_estado">
+			</div>
+
+			<button type="submit" class="btn btn-primary">
+				Guardar / Actualizar
+			</button>
+		</form>
+
+		<!-- LISTADO -->
+		<div class="container-table">
+			<h3>Listado de Lecturas</h3>
+			<div><button class="btn" onclick="importarLectura()">Importar</button><button class="btn" onclick="exportarLectura()">Exportar</button></div>
+			<table>
+				<thead>
+					<tr>
+						<th>Cod</th>
+						<th>Nro. Medidor</th>
+						<th>Nombre</th>
+						<th>Lect. Ant.</th>
+						<th>Lect. Act.</th>
+						<th>Mes</th>
+						<th>Año</th>
+						<th>Acción</th>
+					</tr>
+				</thead>
+				<tbody id="tablaLecturas"></tbody>
+			</table>
+				
+		</div>
+    </section>
+
+    <!-- VISTA HISTORIAL (ONLINE) -->
+    <section id="vista-historial" class="nav-section hidden">
+		<div>		
+			<div class="card">
+				CODIGO CLIENTE<input >AÑO<select><option value=""></option></select><button type="button">Consultar</button>
+			</div>
+		</div>
+		<div class="container-table">
+			<h3>Historial de Lecturas</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Cod</th>
+						<th>Nombre</th>
+						<th>Lect. Ant.</th>
+						<th>Lect. Act.</th>
+						<th>Mes</th>
+						<th>Año</th>
+						<th>Acción</th>
+					</tr>
+				</thead>
+				<tbody id="tablaHistorialLecturas"></tbody>
+			</table>
+				
+		</div>
+    </section>
+
+</main>
+
+
+<script src="js/db.js"></script>
+<script src="js/panel.js"></script>
+</body>
+</html>

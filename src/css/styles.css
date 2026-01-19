@@ -1,0 +1,368 @@
+:root {
+    --color-principal: #0a6cf1;
+    --color-fondo: #f4f6f9;
+    --color-card: #ffffff;
+	
+	--margin-small:1em;
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/*flex box*/
+.flex, .row{
+	display: flex;
+}
+.justify-content-c{
+	justify-content:center;
+}
+.justify-content-sb{
+	justify-content:space-between;
+}
+.flex-1{
+	flex:1;
+}
+
+body {
+    margin: 0;
+    background: var(--color-fondo);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    background: var(--color-principal);
+    color: white;
+    padding: 1rem;
+	
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.titulo{
+    font-size: 1rem;
+    margin: 0;
+}
+small {
+    font-size: 0.75rem;
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    background: var(--color-principal);
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-botones {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: white;
+    color: var(--color-principal);
+    border: none;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-btn.active {
+    background: #ffc107;
+    color: black;
+}
+
+.nav-btn.salir {
+    background: #dc3545;
+    color: white;
+}
+
+/* ===== VISTAS / OCULTAR VISTAS ===== */
+.nav-section{
+	display: flex;
+	flex-wrap:wrap;
+	align-items:flex-start;
+}
+.hidden{
+  display: none;  
+}
+
+/* ===== CAJAS ===== */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+		
+}
+.container-table{
+	padding:1em;
+}
+
+.card {
+    background: var(--color-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+	
+    width: 100%;
+    max-width: 450px;
+	
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+	
+}
+.card input, .card button {
+    font-size: 1rem;
+}
+
+input, select, textarea,button {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+button {
+    background: var(--color-principal);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.info {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/*table*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+}
+
+th {
+    background: var(--color-principal);
+    color: white;
+}
+
+.btn-editar {
+    background: orange;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== TABLA NORMAL (PC) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+}
+
+
+/* FORMULARIO */
+.form-grid {
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+	
+	padding: 1.5rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	margin:var(--margin-small,.3em);
+	
+	//border:1px solid blue;
+}
+
+.form-group {
+    display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+   
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+	flex:1;
+}
+
+.form-group input {
+    padding: 8px;
+    font-size: 0.9rem;
+	flex:2;
+}
+
+/* BOTÓN */
+.btn-primary {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*MODAL*/
+.modal{
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0,0,0,0.2);
+	overflow:auto;
+	z-index;100;
+	
+	display: flex;
+	flex-wrap:wrap;		 
+	justify-content:center;
+	align-items:center;
+}
+
+/*PROGRESS BAR*/
+.progress-bar-container{
+  min-width: 300px;
+  margin: auto;
+}
+.progress-bar {
+  height: 6px;
+  background-color: rgba(5, 114, 206, 0.2);
+  width: 25%;
+  overflow: hidden;
+}
+.progress-bar-value {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(5, 114, 206);
+  animation: indeterminateAnimation 2s infinite linear;
+  transform-origin: 0% 50%;
+}
+@keyframes indeterminateAnimation {
+  0% {
+    transform:  translateX(0) scaleX(0);
+  }
+  40% {
+    transform:  translateX(0) scaleX(0.4);
+  }
+  100% {
+    transform:  translateX(100%) scaleX(0.5);
+  }
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 600px) {
+    .nav-botones {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .nav-btn {
+        flex: 1;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 600px) {
+	 header {
+        flex-direction: column;
+        text-align: center;
+    }
+	
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-grid {
+        width: 100%;
+    }
+	.form-group{
+		flex-direction: column;
+	}
+	
+    table {
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 4px;
+    }
+
+    header button {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+/* ===== TABLA TIPO CARD EN MÓVIL ===== */
+@media (max-width: 600px) {
+
+    table thead {
+        display: none;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    td {
+        text-align: left;
+        padding: 6px;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--color-principal);
+    }
+
+    .btn-editar {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
