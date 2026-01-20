@@ -57,6 +57,9 @@ La API REST deberá implementar autenticación mediante tokens (JWT) y proteger 
 ### REQ-7 – Rendimiento
 La API deberá responder a las solicitudes en un tiempo máximo de 3 segundos bajo condiciones normales de operación.
 
+### REQ-07 – Disponibilidad del sistema
+El sistema deberá garantizar una disponibilidad mínima del 99% durante el horario de operación, asegurando el acceso continuo a la API REST para los sistemas clientes, salvo periodos de mantenimiento programado.
+
 ### REQ-8 – Portabilidad
 El sistema deberá ser compatible con servidores web que soporten PHP 8.x y bases de datos MySQL o MariaDB.
 
